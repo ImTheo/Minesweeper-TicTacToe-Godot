@@ -40,6 +40,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="GridContainer_TicTacToe" type="GridContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 columns = 3
 
@@ -48,31 +49,24 @@ layout_mode = 2
 
 [node name="cell2" parent="VBoxContainer/GridContainer_TicTacToe" instance=ExtResource("2_6l5bb")]
 layout_mode = 2
-metadata/tile = 1
 
 [node name="cell3" parent="VBoxContainer/GridContainer_TicTacToe" instance=ExtResource("2_6l5bb")]
 layout_mode = 2
-metadata/tile = 2
 
 [node name="cell4" parent="VBoxContainer/GridContainer_TicTacToe" instance=ExtResource("2_6l5bb")]
 layout_mode = 2
-metadata/tile = 3
 
 [node name="cell5" parent="VBoxContainer/GridContainer_TicTacToe" instance=ExtResource("2_6l5bb")]
 layout_mode = 2
-metadata/tile = 4
 
 [node name="cell6" parent="VBoxContainer/GridContainer_TicTacToe" instance=ExtResource("2_6l5bb")]
 layout_mode = 2
-metadata/tile = 5
 
 [node name="cell7" parent="VBoxContainer/GridContainer_TicTacToe" instance=ExtResource("2_6l5bb")]
 layout_mode = 2
-metadata/tile = 6
 
 [node name="cell8" parent="VBoxContainer/GridContainer_TicTacToe" instance=ExtResource("2_6l5bb")]
 layout_mode = 2
-metadata/tile = 7
 
 [node name="cell9" parent="VBoxContainer/GridContainer_TicTacToe" instance=ExtResource("2_6l5bb")]
 layout_mode = 2
@@ -102,4 +96,10 @@ stretch_mode = 4
 layout_mode = 2
 text = "Reiniciar"
 
+[node name="Button_return" type="Button" parent="VBoxContainer/VBoxContainer_infoBox"]
+layout_mode = 2
+text = "Menu"
+
+[connection signal="cell_pressed_signal" from="VBoxContainer/GridContainer_TicTacToe/cell1" to="VBoxContainer/GridContainer_TicTacToe/cell2" method="_on_cell_1_cell_pressed_signal"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer_infoBox/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer_infoBox/Button_return" to="." method="_on_button_return_pressed"]
