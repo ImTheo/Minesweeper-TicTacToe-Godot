@@ -1,9 +1,11 @@
 class_name Cell
 extends TextureButton
 
-@onready var cell = $"."
+@onready var cell = self
 var pressed_cell:bool = false
 var index
+const CIRCLE_PNG_119 = preload("res://assets/circle-png-119.png")
+const X_22 = preload("res://assets/X-22.png")
 
 signal cell_pressed_signal(index:int,node:Cell)
 
@@ -18,6 +20,6 @@ func cell_not_pressed():
 
 func update_tile(first_player_turn:bool):
 	if first_player_turn:
-		cell.texture_normal = load("res://assets/X-22.png")
+		cell.texture_normal = X_22
 	else:
-		cell.texture_normal = load("res://assets/circle-png-119.png")
+		cell.texture_normal = CIRCLE_PNG_119

@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cch2g4nm34cma"]
 
-[ext_resource type="Script" path="res://Scripts/ticTacToe.gd" id="1_ahxvd"]
-[ext_resource type="PackedScene" uid="uid://d3cwpywine331" path="res://Scenes/cell.tscn" id="2_6l5bb"]
-[ext_resource type="Texture2D" uid="uid://dhkfjvy0ymv7o" path="res://assets/X-22.png" id="3_u5ogt"]
+[ext_resource type="Script" path="res://Scripts/TicTacToe.gd" id="1_5wija"]
+[ext_resource type="PackedScene" uid="uid://d3cwpywine331" path="res://Scenes/Cell.tscn" id="2_g3m1r"]
+[ext_resource type="Texture2D" uid="uid://dhkfjvy0ymv7o" path="res://assets/X-22.png" id="3_3lixb"]
 
 [node name="TicTacToe" type="Control"]
 layout_mode = 3
@@ -11,7 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ahxvd")
+script = ExtResource("1_5wija")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -44,31 +44,31 @@ unique_name_in_owner = true
 layout_mode = 2
 columns = 3
 
-[node name="cell1" parent="VBoxContainer/GridContainer_TicTacToe" instance=ExtResource("2_6l5bb")]
+[node name="cell1" parent="VBoxContainer/GridContainer_TicTacToe" instance=ExtResource("2_g3m1r")]
 layout_mode = 2
 
-[node name="cell2" parent="VBoxContainer/GridContainer_TicTacToe" instance=ExtResource("2_6l5bb")]
+[node name="cell2" parent="VBoxContainer/GridContainer_TicTacToe" instance=ExtResource("2_g3m1r")]
 layout_mode = 2
 
-[node name="cell3" parent="VBoxContainer/GridContainer_TicTacToe" instance=ExtResource("2_6l5bb")]
+[node name="cell3" parent="VBoxContainer/GridContainer_TicTacToe" instance=ExtResource("2_g3m1r")]
 layout_mode = 2
 
-[node name="cell4" parent="VBoxContainer/GridContainer_TicTacToe" instance=ExtResource("2_6l5bb")]
+[node name="cell4" parent="VBoxContainer/GridContainer_TicTacToe" instance=ExtResource("2_g3m1r")]
 layout_mode = 2
 
-[node name="cell5" parent="VBoxContainer/GridContainer_TicTacToe" instance=ExtResource("2_6l5bb")]
+[node name="cell5" parent="VBoxContainer/GridContainer_TicTacToe" instance=ExtResource("2_g3m1r")]
 layout_mode = 2
 
-[node name="cell6" parent="VBoxContainer/GridContainer_TicTacToe" instance=ExtResource("2_6l5bb")]
+[node name="cell6" parent="VBoxContainer/GridContainer_TicTacToe" instance=ExtResource("2_g3m1r")]
 layout_mode = 2
 
-[node name="cell7" parent="VBoxContainer/GridContainer_TicTacToe" instance=ExtResource("2_6l5bb")]
+[node name="cell7" parent="VBoxContainer/GridContainer_TicTacToe" instance=ExtResource("2_g3m1r")]
 layout_mode = 2
 
-[node name="cell8" parent="VBoxContainer/GridContainer_TicTacToe" instance=ExtResource("2_6l5bb")]
+[node name="cell8" parent="VBoxContainer/GridContainer_TicTacToe" instance=ExtResource("2_g3m1r")]
 layout_mode = 2
 
-[node name="cell9" parent="VBoxContainer/GridContainer_TicTacToe" instance=ExtResource("2_6l5bb")]
+[node name="cell9" parent="VBoxContainer/GridContainer_TicTacToe" instance=ExtResource("2_g3m1r")]
 layout_mode = 2
 metadata/tile = 8
 
@@ -88,7 +88,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("3_u5ogt")
+texture = ExtResource("3_3lixb")
 expand_mode = 2
 stretch_mode = 4
 
@@ -100,6 +100,5 @@ text = "Reiniciar"
 layout_mode = 2
 text = "Menu"
 
-[connection signal="cell_pressed_signal" from="VBoxContainer/GridContainer_TicTacToe/cell1" to="VBoxContainer/GridContainer_TicTacToe/cell2" method="_on_cell_1_cell_pressed_signal"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer_infoBox/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer_infoBox/Button_return" to="." method="_on_button_return_pressed"]
