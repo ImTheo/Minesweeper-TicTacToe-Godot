@@ -100,7 +100,7 @@ func end_game(message:String):
 		i.explode_mine()
 
 func _on_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/MainSweeper.tscn")
+	get_tree().change_scene_to_file("res://Screens/Minesweeper/MineSweeper.tscn")
 
 func _on_button_return_pressed():
 	get_tree().change_scene_to_file("res://Screens/MainMenu/MainMenu.tscn")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq4a5mcjq2gw0"
-path="res://.godot/imported/type0.svg-a97285961ce2e200525c3e7a25051a62.ctex"
+uid="uid://i20mttb1qitq"
+path="res://.godot/imported/type5.svg-f715af6b31332bfeb7f3bb008560a038.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/type0.svg"
-dest_files=["res://.godot/imported/type0.svg-a97285961ce2e200525c3e7a25051a62.ctex"]
+source_file="res://Screens/Minesweeper/Assets/type5.svg"
+dest_files=["res://.godot/imported/type5.svg-f715af6b31332bfeb7f3bb008560a038.ctex"]
 
 [params]
 

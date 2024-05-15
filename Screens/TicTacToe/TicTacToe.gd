@@ -1,9 +1,9 @@
 class_name TicTaeToe
 extends Control
 
-var players:Array[Player]
 @onready var is_first_player_turn := true
 @onready var board_map:Array = [-1,-1,-1,-1,-1,-1,-1,-1,-1]
+var players:Array[Player]
 var winning_lines:Array
 
 func _ready():

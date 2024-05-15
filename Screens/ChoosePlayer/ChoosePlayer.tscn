@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://c28c7bd7wcffh"]
 
 [ext_resource type="Script" path="res://Screens/ChoosePlayer/ChoosePlayer.gd" id="1_5u73b"]
-[ext_resource type="Texture2D" uid="uid://bajru73r8qdlo" path="res://assets/type1.svg" id="2_th30l"]
-[ext_resource type="Texture2D" uid="uid://b5la0vud1kaj1" path="res://assets/mine_red.svg" id="3_0amck"]
-[ext_resource type="Texture2D" uid="uid://dim8edvf800b1" path="res://assets/type2.svg" id="4_krhni"]
-[ext_resource type="Texture2D" uid="uid://bsuhfdnyjnuf" path="res://assets/type3.svg" id="5_h7u8p"]
+[ext_resource type="Texture2D" uid="uid://bajru73r8qdlo" path="res://Screens/Minesweeper/Assets/type1.svg" id="2_th30l"]
+[ext_resource type="Texture2D" uid="uid://b5la0vud1kaj1" path="res://Screens/Minesweeper/Assets/mine_red.svg" id="3_0amck"]
+[ext_resource type="Texture2D" uid="uid://dim8edvf800b1" path="res://Screens/Minesweeper/Assets/type2.svg" id="4_krhni"]
+[ext_resource type="Texture2D" uid="uid://bsuhfdnyjnuf" path="res://Screens/Minesweeper/Assets/type3.svg" id="5_h7u8p"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_wncee"]
 

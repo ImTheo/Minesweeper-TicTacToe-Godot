@@ -2,19 +2,19 @@ class_name Square
 extends TextureButton
 
 #region constants
-const CLOSED = preload("res://assets/closed.svg")
-const TYPE_0 = preload("res://assets/type0.svg")
-const TYPE_1 = preload("res://assets/type1.svg")
-const TYPE_2 = preload("res://assets/type2.svg")
-const TYPE_3 = preload("res://assets/type3.svg")
-const FLAG = preload("res://assets/flag.svg")
-const MINE = preload("res://assets/mine.svg")
-const MINE_RED = preload("res://assets/mine_red.svg")
-const TYPE_4 = preload("res://assets/type4.svg")
-const TYPE_5 = preload("res://assets/type5.svg")
-const TYPE_6 = preload("res://assets/type6.svg")
-const TYPE_7 = preload("res://assets/type7.svg")
-const TYPE_8 = preload("res://assets/type8.svg")
+const CLOSED = preload("res://Screens/Minesweeper/Assets/closed.svg")
+const FLAG = preload("res://Screens/Minesweeper/Assets/flag.svg")
+const MINE = preload("res://Screens/Minesweeper/Assets/mine.svg")
+const MINE_RED = preload("res://Screens/Minesweeper/Assets/mine_red.svg")
+const TYPE_0 = preload("res://Screens/Minesweeper/Assets/type0.svg")
+const TYPE_1 = preload("res://Screens/Minesweeper/Assets/type1.svg")
+const TYPE_2 = preload("res://Screens/Minesweeper/Assets/type2.svg")
+const TYPE_3 = preload("res://Screens/Minesweeper/Assets/type3.svg")
+const TYPE_4 = preload("res://Screens/Minesweeper/Assets/type4.svg")
+const TYPE_5 = preload("res://Screens/Minesweeper/Assets/type5.svg")
+const TYPE_6 = preload("res://Screens/Minesweeper/Assets/type6.svg")
+const TYPE_7 = preload("res://Screens/Minesweeper/Assets/type7.svg")
+const TYPE_8 = preload("res://Screens/Minesweeper/Assets/type8.svg")
 #endregion
 
 @onready var square = self

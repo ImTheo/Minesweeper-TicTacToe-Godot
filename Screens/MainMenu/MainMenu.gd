@@ -8,5 +8,4 @@ func _on_button_tic_tac_toe_pressed():
 
 
 func _on_button_minesweeper_pressed():
-	pass
-	#get_tree().change_scene_to_packed(MINE_SWEEPER)
+	get_tree().change_scene_to_file("res://Screens/Minesweeper/MineSweeper.tscn")
