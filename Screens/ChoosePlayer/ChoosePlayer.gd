@@ -5,6 +5,7 @@ const SIGN_GROUP = "sign_buttons"
 const SIGNAL_SIGN_SELECTED = "sign_selected"
 
 func _ready():
+	%Label_player.text = "Jugador 1"
 	refresh_enabled_signs()
 
 func refresh_enabled_signs():
@@ -20,13 +21,12 @@ func _on_button_save_player_pressed():
 		if i.is_pressed():
 			player_resource_path = i.texture_normal.resource_path
 			player_name = (%LineEdit_playerName as LineEdit).text
+			%Label_player.text = "Jugador 2"
 			i.queue_free()
 			players.append(Player.new(player_name,player_resource_path))
-
 	if players.size() == 1:
 		refresh_enabled_signs()
 		return
-		
 	change_scene()
 
 func change_scene():

@@ -3,15 +3,14 @@ extends TextureButton
 
 @onready var cell = self
 var pressed_cell:bool = false
-var index
 var player_1 = "res://Screens/TicTacToe/Assets/circle-png-119.png"
 var player_2 = "res://Screens/TicTacToe/Assets/X-22.png"
 
-signal cell_pressed_signal(index:int,node:Cell)
+signal cell_pressed_signal(node:Cell)
 
 func _on_pressed():
 	if cell_not_pressed():
-		emit_signal("cell_pressed_signal",index,self)
+		emit_signal("cell_pressed_signal",self)
 
 func cell_not_pressed():
 	if not pressed_cell:

@@ -4,16 +4,45 @@ extends Control
 var players:Array[Player]
 @onready var is_first_player_turn := true
 @onready var board_map:Array = [-1,-1,-1,-1,-1,-1,-1,-1,-1]
-const winning_lines = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
+var winning_lines:Array
 
 func _ready():
 	set_game_board_stats()
+	winning_lines = calculate_winning_lines(sqrt(board_map.size()))
+	
+	for i in range(%GridContainer_TicTacToe.get_child_count()):
+		(%GridContainer_TicTacToe.get_child(i) as Cell).connect("cell_pressed_signal",cell_pressed)
 
-	var i = 0
-	for cell:Cell in %GridContainer_TicTacToe.get_children():
-		cell.index = i
-		cell.connect("cell_pressed_signal",cell_pressed)
-		i=1+i
+func calculate_winning_lines(board_size: int) -> Array:
+	var res = []
+	
+	# Rows
+	for i in range(board_size):
+		var row = []
+		for j in range(board_size):
+			row.append(i * board_size + j)
+		res.append(row)
+	
+	# Columns
+	for i in range(board_size):
+		var column = []
+		for j in range(board_size):
+			column.append(j * board_size + i)
+		res.append(column)
+	
+	# Diagonal top-left to bottom-right
+	var diagonal1 = []
+	for i in range(board_size):
+		diagonal1.append(i * board_size + i)
+	res.append(diagonal1)
+	
+	# Diagonal top-right to bottom-left
+	var diagonal2 = []
+	for i in range(board_size):
+		diagonal2.append((i + 1) * (board_size - 1))
+	res.append(diagonal2)
+	
+	return res
 
 func set_game_board_stats():
 	(%TextureRect_currentPlayer as TextureRect).texture = load(players[0].texture_path)
@@ -72,12 +101,13 @@ func end_game():
 func game_ended():
 	return false
 	
-func cell_pressed(index:int,node:Cell):
+func cell_pressed(node:Cell):
+	#print(node.get_index())
 	if is_first_player_turn:
 		node.update_tile(players[0].texture_path)
 	else:
 		node.update_tile(players[1].texture_path)
-	change_turn(index)
+	change_turn(node.get_index())
 
 func _on_button_pressed():
 	var tic_tac_toe = preload("res://Screens/TicTacToe/TicTacToe.tscn")
