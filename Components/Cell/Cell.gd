@@ -3,8 +3,6 @@ extends TextureButton
 
 @onready var cell = self
 var pressed_cell:bool = false
-var player_1 = "res://Screens/TicTacToe/Assets/circle-png-119.png"
-var player_2 = "res://Screens/TicTacToe/Assets/X-22.png"
 
 signal cell_pressed_signal(node:Cell)
 

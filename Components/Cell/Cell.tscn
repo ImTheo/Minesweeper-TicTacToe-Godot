@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d3cwpywine331"]
 
 [ext_resource type="Texture2D" uid="uid://c7kxtwvadgfb" path="res://icon.svg" id="1_hy26l"]
-[ext_resource type="Script" path="res://Components/CellMinesweeper/Cell.gd" id="2_ng727"]
+[ext_resource type="Script" path="res://Components/Cell/Cell.gd" id="2_ng727"]
 
 [node name="cell" type="TextureButton"]
 clip_contents = true
