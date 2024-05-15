@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://78a2qr82snee"
-path="res://.godot/imported/circle-png-119.png-a99bffce9d4ecc134b9d0e357cdc03b3.ctex"
+path="res://.godot/imported/circle-png-119.png-3c33c7b2e5461c71a00bf96b96a238b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/circle-png-119.png"
-dest_files=["res://.godot/imported/circle-png-119.png-a99bffce9d4ecc134b9d0e357cdc03b3.ctex"]
+source_file="res://Screens/TicTacToe/Assets/circle-png-119.png"
+dest_files=["res://.godot/imported/circle-png-119.png-3c33c7b2e5461c71a00bf96b96a238b6.ctex"]
 
 [params]
 

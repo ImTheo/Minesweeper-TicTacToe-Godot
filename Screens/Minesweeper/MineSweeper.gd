@@ -6,16 +6,15 @@ extends Control
 var board_squares:Array[Square]
 const SQUARE_NUMBER = 100
 const MINES = 10
-const SQUARE = preload("res://Scenes/Square.tscn")
+const SQUARE = preload("res://Components/Square/Square.tscn")
 var board_array = []
+
 
 func _ready():
 	fill_board_array()
 	create_board()
 	plant_mines()
 	generate_hints()
-	#for i in get_tree().get_nodes_in_group("hints"):
-		#print(i)
 
 func fill_board_array():
 	var row:Array[int] = []
@@ -104,4 +103,4 @@ func _on_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/MainSweeper.tscn")
 
 func _on_button_return_pressed():
-	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
+	get_tree().change_scene_to_file("res://Screens/MainMenu/MainMenu.tscn")
