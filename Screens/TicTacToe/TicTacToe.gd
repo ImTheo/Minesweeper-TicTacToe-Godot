@@ -9,13 +9,13 @@ const TIC_TAC_TOE_CELLS = 9
 const CELL = preload("res://Components/Cell/Cell.tscn")
 
 func _ready():
-	set_game_board_player_stats()
+	update_game_board_player_stats()
 	update_winning_lines(sqrt(board_map.size()))
 	instanciate_cells()
 
 func instanciate_cells():
 	var cell:Cell
-	for i in range(TIC_TAC_TOE_CELLS):
+	for ii in range(TIC_TAC_TOE_CELLS):
 		cell = CELL.instantiate()
 		cell.connect("cell_pressed_signal",cell_pressed)
 		%GridContainer_TicTacToe.add_child(cell)
@@ -105,28 +105,28 @@ func _on_button_return_pressed():
 
 func update_winning_lines(board_size: int):
 	# Rows
-	for i in range(board_size):
+	for ii in range(board_size):
 		var row = []
-		for j in range(board_size):
-			row.append(i * board_size + j)
+		for jj in range(board_size):
+			row.append(ii * board_size + jj)
 		winning_lines.append(row)
 	
 	# Columns
-	for i in range(board_size):
+	for ii in range(board_size):
 		var column = []
-		for j in range(board_size):
-			column.append(j * board_size + i)
+		for jj in range(board_size):
+			column.append(jj * board_size + ii)
 		winning_lines.append(column)
 	
 	# Diagonal top-left to bottom-right
 	var diagonal1 = []
-	for i in range(board_size):
-		diagonal1.append(i * board_size + i)
+	for ii in range(board_size):
+		diagonal1.append(ii * board_size + ii)
 	winning_lines.append(diagonal1)
 	
 	# Diagonal top-right to bottom-left
 	var diagonal2 = []
-	for i in range(board_size):
-		diagonal2.append((i + 1) * (board_size - 1))
+	for ii in range(board_size):
+		diagonal2.append((ii + 1) * (board_size - 1))
 	winning_lines.append(diagonal2)
 

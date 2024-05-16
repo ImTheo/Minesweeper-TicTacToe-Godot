@@ -17,17 +17,18 @@ func refresh_enabled_signs():
 func _on_button_save_player_pressed():
 	var player_resource_path
 	var player_name
+	player_name = (%LineEdit_playerName as LineEdit).text
+	%Label_player.text = "Jugador 2"
 	for i:TextureButton in get_tree().get_nodes_in_group(SIGN_GROUP):
 		if i.is_pressed():
 			player_resource_path = i.texture_normal.resource_path
-			player_name = (%LineEdit_playerName as LineEdit).text
-			%Label_player.text = "Jugador 2"
 			i.queue_free()
 			players.append(Player.new(player_name,player_resource_path))
+			break
 	if players.size() == 1:
 		refresh_enabled_signs()
-		return
-	change_scene()
+	else:
+		change_scene()
 
 func change_scene():
 	var scene = preload("res://Screens/TicTacToe/TicTacToe.tscn")

@@ -26,7 +26,7 @@ var hint_score = 0
 
 signal empty_square_pressed_signal(node:Square)
 signal game_ended_signal()
-signal flagged_mine_signal()
+signal flag_updated_signal()
 signal hint_square_pressed_signal()
 
 func is_mined():
@@ -77,11 +77,11 @@ func mark_flag_square():
 	if not pressed_square and not flagged:
 		set_texture_square(FLAG)
 		flagged = true
-		flagged_mine_signal.emit(true)
+		flag_updated_signal.emit(true)
 		return
 	set_texture_square(CLOSED)
 	flagged = false
-	flagged_mine_signal.emit(false)
+	flag_updated_signal.emit(false)
 
 func set_texture_square(texture):
 	square.texture_normal = texture
