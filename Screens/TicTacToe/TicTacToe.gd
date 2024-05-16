@@ -29,7 +29,7 @@ func update_game_board_player_stats():
 	(%Label_player_2 as Label).text = players[1].name
 	(%Label_player2_streak as Label).text = str(players[1].wins)
 
-func change_turn(cell_index:int):
+func change_turn():
 	is_first_player_turn = !is_first_player_turn
 	update_current_player()
 	
@@ -72,7 +72,7 @@ func cell_pressed(cell:Cell):
 	update_texture(cell)
 	update_board_map(cell.get_index())
 	if not is_game_over():
-		change_turn(cell.get_index())
+		change_turn()
 	else:
 		end_game()
 	
