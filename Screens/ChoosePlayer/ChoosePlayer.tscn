@@ -141,3 +141,5 @@ text = "Siguiente"
 [connection signal="pressed" from="VBoxContainer/MarginContainer3/HBoxContainer/GridContainer/AspectRatioContainer2/TextureButton_Sign" to="VBoxContainer/MarginContainer3/HBoxContainer/GridContainer/AspectRatioContainer2" method="_on_texture_button_sign_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer3/HBoxContainer/GridContainer/AspectRatioContainer3/TextureButton_Sign" to="VBoxContainer/MarginContainer3/HBoxContainer/GridContainer/AspectRatioContainer3" method="_on_texture_button_sign_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Button_savePlayer" to="." method="_on_button_save_player_pressed"]
+[connection signal="tree_exited" from="VBoxContainer/HBoxContainer/Button_savePlayer" to="." method="_on_button_save_player_tree_exited"]
+[connection signal="tree_exiting" from="VBoxContainer/HBoxContainer/Button_savePlayer" to="." method="_on_button_save_player_tree_exiting"]

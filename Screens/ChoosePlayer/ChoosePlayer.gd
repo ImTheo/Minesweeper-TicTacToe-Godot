@@ -3,8 +3,12 @@ extends Control
 var players:Array[Player]
 const SIGN_GROUP = "sign_buttons"
 const SIGNAL_SIGN_SELECTED = "sign_selected"
+var tic_tac_toe_scene:TicTaeToe
+
+@onready var tree = get_tree()
 
 func _ready():
+	tic_tac_toe_scene = load("res://Screens/TicTacToe/TicTacToe.tscn").instantiate() as TicTaeToe
 	%Label_player.text = "Jugador 1"
 	refresh_enabled_signs()
 
@@ -31,8 +35,5 @@ func _on_button_save_player_pressed():
 		change_scene()
 
 func change_scene():
-	var scene = preload("res://Screens/TicTacToe/TicTacToe.tscn")
-	var node = scene.instantiate()
-	node.players = players
-	get_tree().root.add_child(node)
-	self.queue_free()
+	tic_tac_toe_scene.players = players
+	Auto.change_instanced_scene(self,tic_tac_toe_scene)

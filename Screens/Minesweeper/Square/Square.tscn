@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cd4njqupgwpeb"]
 
 [ext_resource type="Texture2D" uid="uid://ui2waiwle1il" path="res://Screens/Minesweeper/Assets/closed.svg" id="1_mam63"]
-[ext_resource type="Script" path="res://Components/Square/Square.gd" id="2_rdcs3"]
+[ext_resource type="Script" path="res://Screens/Minesweeper/Square/Square.gd" id="2_rdcs3"]
 
 [node name="Square" type="TextureButton" groups=["squares"]]
 clip_contents = true

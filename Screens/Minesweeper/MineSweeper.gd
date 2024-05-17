@@ -3,7 +3,7 @@ extends Control
 var board_squares:Array[Square]
 const SQUARE_NUMBER = 100
 const MINES = 10
-const SQUARE = preload("res://Components/Square/Square.tscn")
+const SQUARE = preload("uid://cd4njqupgwpeb")
 var board_array = []
 
 func _ready():

@@ -3,12 +3,17 @@ extends Control
 
 var is_first_player_turn := true
 var board_map:Array[int] = [-1,-1,-1,-1,-1,-1,-1,-1,-1]
-var players:Array[Player]
+@onready var players:Array[Player]
+@export var playerResource:PlayerResource
+@export var test = ""
 var winning_lines:Array
 const TIC_TAC_TOE_CELLS = 9
-const CELL = preload("res://Components/Cell/Cell.tscn")
+var CELL = load("uid://d3cwpywine331")
+
 
 func _ready():
+	# playerResource = PlayerResource.new()
+	#players = playerResource.players
 	update_game_board_player_stats()
 	update_winning_lines(sqrt(board_map.size()))
 	instanciate_cells()
@@ -96,12 +101,11 @@ func _on_button_pressed():
 	var tic_tac_toe = preload("res://Screens/TicTacToe/TicTacToe.tscn")
 	var node = tic_tac_toe.instantiate()
 	node.players = players
-	get_tree().root.add_child(node)
-	self.queue_free()
+	Auto.change_instanced_scene(self,node)
 
 func _on_button_return_pressed():
-	self.queue_free()
-	get_tree().change_scene_to_file("res://Screens/MainMenu/MainMenu.tscn")
+	var scene = preload("res://Screens/MainMenu/MainMenu.tscn")
+	get_tree().change_scene_to_packed(scene)
 
 func update_winning_lines(board_size: int):
 	# Rows
@@ -130,3 +134,6 @@ func update_winning_lines(board_size: int):
 		diagonal2.append((ii + 1) * (board_size - 1))
 	winning_lines.append(diagonal2)
 
+	#func _init(playerList:Array[Player]):
+		#players = playerList
+	

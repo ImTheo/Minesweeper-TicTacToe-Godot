@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cch2g4nm34cma"]
+[gd_scene load_steps=2 format=3 uid="uid://cch2g4nm34cma"]
 
 [ext_resource type="Script" path="res://Screens/TicTacToe/TicTacToe.gd" id="1_144f3"]
-[ext_resource type="Texture2D" uid="uid://dhkfjvy0ymv7o" path="res://Screens/TicTacToe/Assets/X-22.png" id="3_55k0m"]
 
 [node name="TicTacToe" type="Control"]
 layout_mode = 3
@@ -55,19 +54,17 @@ size_flags_horizontal = 4
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "player
-"
+text = "player"
 
 [node name="TextureRect_currentPlayer" type="TextureRect" parent="HBoxContainer/VBoxContainer/VBoxContainer_infoBox"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("3_55k0m")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer_infoBox"]
+[node name="Button_reset" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer_infoBox"]
 layout_mode = 2
 text = "Reiniciar"
 
@@ -92,13 +89,14 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 40
-text = "Player"
+text = "player"
 
 [node name="Label_player1_streak" type="Label" parent="HBoxContainer/VBoxContainer2/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 40
+text = "0"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -115,6 +113,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 40
+text = "0"
 
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer_infoBox/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer_infoBox/Button_reset" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer_infoBox/Button_return" to="." method="_on_button_return_pressed"]
