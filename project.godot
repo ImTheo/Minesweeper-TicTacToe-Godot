@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="BuscaRayas"
-run/main_scene="res://Screens/MainMenu/MainMenu.tscn"
+run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Auto="*res://auto.gd"
+Auto="*res://global_systems/scene_manager_system/scene_manager/scene_manager.gd"
 
 [display]
 
@@ -28,8 +28,8 @@ window/stretch/mode="canvas_items"
 [file_customization]
 
 folder_colors={
-"res://Data/": "orange",
-"res://Screens/": "yellow"
+"res://data/": "orange",
+"res://screens/": "yellow"
 }
 
 [input]

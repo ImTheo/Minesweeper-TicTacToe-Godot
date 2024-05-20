@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh86pg0gra60k"]
+
+[ext_resource type="Script" path="res://screens/minesweeper/minesweeper.gd" id="1_hfdsn"]
+
+[node name="Mainsweeper" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hfdsn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Minesweeper"
+horizontal_alignment = 1
+
+[node name="GridContainer_Minesweeper" type="GridContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 10
+
+[node name="VBoxContainer_infoBox" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer_infoBox"]
+layout_mode = 2
+
+[node name="Label_mine" type="Label" parent="VBoxContainer/VBoxContainer_infoBox/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Minas:
+"
+
+[node name="Label_minesLeft" type="Label" parent="VBoxContainer/VBoxContainer_infoBox/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "10"
+
+[node name="Button" type="Button" parent="VBoxContainer/VBoxContainer_infoBox"]
+layout_mode = 2
+text = "Reiniciar"
+
+[node name="Button_return" type="Button" parent="VBoxContainer/VBoxContainer_infoBox"]
+layout_mode = 2
+text = "Menu"
+
+[connection signal="pressed" from="VBoxContainer/VBoxContainer_infoBox/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer_infoBox/Button_return" to="." method="_on_button_return_pressed"]
