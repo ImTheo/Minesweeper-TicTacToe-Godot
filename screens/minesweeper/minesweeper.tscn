@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://screens/minesweeper/minesweeper.gd" id="1_hfdsn"]
 
-[node name="Mainsweeper" type="Control"]
+[node name="Minesweeper" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

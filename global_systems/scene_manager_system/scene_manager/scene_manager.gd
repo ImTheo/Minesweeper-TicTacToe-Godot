@@ -15,7 +15,7 @@ extends Node
 #region metodo 2 exit_tree
 func change_instanced_scene(old_scene:Node,new_scene:Node):
 	old_scene.queue_free()
-	current_scene.add_child(new_scene)
+	get_node("/root/Main").add_child(new_scene)
 #endregion
 
 #region metodo 3 packed_scene

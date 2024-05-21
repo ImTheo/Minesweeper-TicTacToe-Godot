@@ -1,24 +1,29 @@
 extends Control
 
 var board_squares:Array[Square]
-const SQUARE_NUMBER = 100
-const MINES = 10
-const SQUARE = preload("uid://cd4njqupgwpeb")
+const COLUMNS = 10
+const SQUARES = int(pow(COLUMNS,2))
+const MINES = COLUMNS
+const SQUARE_SCENE:Resource = preload("uid://cd4njqupgwpeb")
 var board_array:Array[Array] = []
 
 func _ready():
+	update_board_scene()
 	update_board_array()
 	instantiate_squares()
 	set_mines()
 	set_hints()
-
+	
+func update_board_scene():
+	(%GridContainer_Minesweeper as GridContainer).columns = COLUMNS
+	(%Label_minesLeft as Label).text = str(MINES)
+	
 func update_board_array():
 	var row:Array[int] = []
-	var matrix_rows:int = SQUARE_NUMBER/%GridContainer_Minesweeper.columns
-	var matrix_columns:int = %GridContainer_Minesweeper.columns
+	var matrix_rows:int = SQUARES/%GridContainer_Minesweeper.columns
 	for i in range(matrix_rows):
-		for j in range(matrix_columns):
-			row.append(matrix_columns*i+j)
+		for j in range(COLUMNS):
+			row.append(COLUMNS*i+j)
 		board_array.append(row)
 		row = []
 
@@ -26,7 +31,6 @@ func empty_square_pressed(square:Square):
 	reveal_empty_squares(square)
 
 func reveal_empty_squares(square:Square):
-	#if square.is_square_pressed() or square.is_mined():
 	if square.is_square_pressed():
 		return
 	square.reveal_tile()
@@ -44,14 +48,13 @@ func hint_square_pressed():
 func all_hints_pressed()->bool:
 	for i:Square in get_tree().get_nodes_in_group("hints"):
 		if not i.is_square_pressed():
-			print(i.index_to_coordinates(i.get_index()))
 			return false
 	return true
 
 func instantiate_squares():
 	var square:Square
-	for ii in range(SQUARE_NUMBER):
-		square = SQUARE.instantiate()
+	for ii in range(SQUARES):
+		square = SQUARE_SCENE.instantiate()
 		square.connect("game_ended", game_ended)
 		square.connect("hint_square_pressed", hint_square_pressed)
 		square.connect("empty_square_pressed", empty_square_pressed)
@@ -78,13 +81,11 @@ func set_mines():
 	var mines_indexes:Array[int] = get_unique_random_numbers()
 	for ii:int in mines_indexes:
 		board_squares[ii].mine_square()
-			
-	#%Label_minesLeft.text = str(mines_indexes.size())
 
 func get_unique_random_numbers()->Array[int]:
 	var numbers:Array[int] = []
 	while numbers.size() < MINES:
-		var number = randi() % SQUARE_NUMBER
+		var number = randi() % SQUARES
 		if not numbers.has(number):
 			numbers.append(number)
 	return numbers

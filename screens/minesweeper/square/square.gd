@@ -1,20 +1,20 @@
 class_name Square
 extends TextureButton
 
-#region constants
-const CLOSED = preload("uid://ui2waiwle1il")
-const FLAG = preload("uid://d2cp2mce8mx20")
-const MINE = preload("uid://be7wrvo21i7ll")
-const MINE_RED = preload("uid://b5la0vud1kaj1")
-const TYPE_0 = preload("uid://cq4a5mcjq2gw0")
-const TYPE_1 = preload("uid://bajru73r8qdlo")
-const TYPE_2 = preload("uid://dim8edvf800b1")
-const TYPE_3 = preload("uid://bsuhfdnyjnuf")
-const TYPE_4 = preload("uid://0r4avphf6u4o")
-const TYPE_5 = preload("uid://i20mttb1qitq")
-const TYPE_6 = preload("uid://ktpxsugm7g52")
-const TYPE_7 = preload("uid://dtmydp2w0kkhm")
-const TYPE_8 = preload("uid://1uxqshjmxn8y")
+#region texture constants
+const CLOSED = "uid://ui2waiwle1il"
+const FLAG = "uid://d2cp2mce8mx20"
+const MINE = "uid://be7wrvo21i7ll"
+const MINE_RED = "uid://b5la0vud1kaj1"
+const TYPE_0 = "uid://cq4a5mcjq2gw0"
+const TYPE_1 = "uid://bajru73r8qdlo"
+const TYPE_2 = "uid://dim8edvf800b1"
+const TYPE_3 = "uid://bsuhfdnyjnuf"
+const TYPE_4 = "uid://0r4avphf6u4o"
+const TYPE_5 = "uid://i20mttb1qitq"
+const TYPE_6 = "uid://ktpxsugm7g52"
+const TYPE_7 = "uid://dtmydp2w0kkhm"
+const TYPE_8 = "uid://1uxqshjmxn8y"
 #endregion
 
 @onready var square:TextureButton = self
@@ -88,7 +88,7 @@ func update_flag_square():
 	flag_updated.emit(false)
 
 func set_texture_square(texture):
-	square.texture_normal = texture
+	square.texture_normal = load(texture)
 	
 func _on_gui_input(event):
 	if event is InputEventMouseButton and event.is_pressed() and not square.disabled:
@@ -97,9 +97,11 @@ func _on_gui_input(event):
 				update_tile()
 			MOUSE_BUTTON_RIGHT:
 				update_flag_square()
+			MOUSE_BUTTON_MIDDLE:
+				var arr:Array[Array] = [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9], [10, 11, 12, 13, 14, 15, 16, 17, 18, 19], [20, 21, 22, 23, 24, 25, 26, 27, 28, 29], [30, 31, 32, 33, 34, 35, 36, 37, 38, 39], [40, 41, 42, 43, 44, 45, 46, 47, 48, 49], [50, 51, 52, 53, 54, 55, 56, 57, 58, 59], [60, 61, 62, 63, 64, 65, 66, 67, 68, 69], [70, 71, 72, 73, 74, 75, 76, 77, 78, 79], [80, 81, 82, 83, 84, 85, 86, 87, 88, 89], [90, 91, 92, 93, 94, 95, 96, 97, 98, 99]]
+				print(get_adjacent(arr,index_to_coordinates(arr[0].size(),self.get_index())))
 
-func index_to_coordinates(index:int) -> Vector2:
-	var num_columns: int = 10
+func index_to_coordinates(num_columns:int,index:int) -> Vector2:
 	var row: int = int(index / num_columns)
 	var column: int = index % num_columns
 	return Vector2(row, column)
@@ -123,7 +125,8 @@ func get_adjacent(board_array:Array[Array],index_position:Vector2)->Array:
 	return v
 
 func get_adyacent_elements(board_index:int,board_array:Array[Array])->Array:
-	var index_position:Vector2 = index_to_coordinates(board_index)
+	var columns_size = board_array[0].size()
+	var index_position:Vector2 = index_to_coordinates(columns_size,board_index)
 	var adyacent_list:Array = get_adjacent(board_array,index_position)
 	return adyacent_list
 
