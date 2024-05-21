@@ -52,13 +52,13 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "10"
 
-[node name="Button" type="Button" parent="VBoxContainer/VBoxContainer_infoBox"]
+[node name="Button_reiniciar" type="Button" parent="VBoxContainer/VBoxContainer_infoBox"]
 layout_mode = 2
 text = "Reiniciar"
 
-[node name="Button_return" type="Button" parent="VBoxContainer/VBoxContainer_infoBox"]
+[node name="Button_menu" type="Button" parent="VBoxContainer/VBoxContainer_infoBox"]
 layout_mode = 2
 text = "Menu"
 
-[connection signal="pressed" from="VBoxContainer/VBoxContainer_infoBox/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer_infoBox/Button_return" to="." method="_on_button_return_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer_infoBox/Button_reiniciar" to="." method="_on_button_reiniciar_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer_infoBox/Button_menu" to="." method="_on_button_menu_pressed"]

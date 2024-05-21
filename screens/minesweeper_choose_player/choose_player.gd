@@ -36,5 +36,5 @@ func push_saved_player():
 
 func change_scene():
 	tic_tac_toe_scene.players = players
-	Auto.change_loaded_scene(tic_tac_toe_scene)
+	Auto.change_instanced_scene(self,tic_tac_toe_scene)
 	#Auto.change_instanced_scene(tic_tac_toe_scene)

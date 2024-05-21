@@ -99,10 +99,11 @@ func game_ended(message:String):
 	for ii:Square in get_tree().get_nodes_in_group("mines"):
 		ii.explode_mine()
 
-func _on_button_pressed():
+func _on_button_reiniciar_pressed():
 	var minesweeper_scene = load("uid://bh86pg0gra60k").instantiate()
-	Auto.change_loaded_scene(minesweeper_scene)
-	
-func _on_button_return_pressed():
+	Auto.change_instanced_scene(self,minesweeper_scene)
+
+
+func _on_button_menu_pressed():
 	var main_scene = load("uid://c1s431lbfbycn").instantiate()
-	Auto.change_loaded_scene(main_scene)
+	Auto.change_instanced_scene(self,main_scene)
