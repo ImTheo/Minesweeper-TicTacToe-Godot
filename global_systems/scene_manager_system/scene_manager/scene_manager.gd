@@ -1,6 +1,6 @@
 extends Node
 @onready var packed_scene := PackedScene.new()
-@onready var current_scene = get_tree().current_scene
+@onready var parent_container = get_node("/root/Main")
 #region Metodo 1
 #func change_instanced_scene(new_scene:Node):
 	#var current_node = get_node("/root/Main")
@@ -13,9 +13,10 @@ extends Node
 #endregion
 
 #region metodo 2 exit_tree
-func change_instanced_scene(old_scene:Node,new_scene:Node):
+func reeplace_scene(old_scene:Node,new_scene:Node):
+	parent_container.remove_child(old_scene)
+	parent_container.add_child(new_scene)
 	old_scene.queue_free()
-	get_node("/root/Main").add_child(new_scene)
 #endregion
 
 #region metodo 3 packed_scene

@@ -6,15 +6,15 @@ extends Control
 
 func _on_button_tic_tac_toe_pressed():
 	var choose_player_scene = load("uid://c28c7bd7wcffh").instantiate()
-	Auto.change_instanced_scene(self,choose_player_scene)
-	#Auto.change_instanced_scene(choose_player_scene)
+	Auto.reeplace_scene(self,choose_player_scene)
+	#Auto.reeplace_scene(choose_player_scene)
 
 func _on_button_minesweeper_pressed():
 	var minesweeper_scene = load("uid://bh86pg0gra60k").instantiate()
-	Auto.change_instanced_scene(self,minesweeper_scene)
+	Auto.reeplace_scene(self,minesweeper_scene)
 
 
 #func _on_button_minesweeper_2_pressed():
 	#var node = Node2D.new()
 	#node.name = "new scene"
-	#Auto.change_instanced_scene(self,node)
+	#Auto.reeplace_scene(self,node)

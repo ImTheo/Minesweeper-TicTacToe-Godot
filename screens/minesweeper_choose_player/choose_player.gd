@@ -10,9 +10,9 @@ var tic_tac_toe_scene:TicTaeToe
 func _ready():
 	tic_tac_toe_scene = load("uid://cch2g4nm34cma").instantiate() as TicTaeToe
 	%Label_player.text = "Jugador 1"
-	refresh_enabled_signs()
+	get_tree().get_first_node_in_group(SIGN_GROUP).button_pressed = true
 
-func refresh_enabled_signs():
+func update_available_signs():
 	for i:TextureButton in get_tree().get_nodes_in_group(SIGN_GROUP):
 		if not i.button_pressed and not i.disabled:
 			i.button_pressed = true
@@ -20,7 +20,8 @@ func refresh_enabled_signs():
 
 func _on_button_siguiente_pressed():
 	push_saved_player()
-	refresh_enabled_signs()
+	%Label_player.text = "Jugador 2"
+	update_available_signs()
 	if players.size() == 2:
 		change_scene()
 
@@ -36,5 +37,4 @@ func push_saved_player():
 
 func change_scene():
 	tic_tac_toe_scene.players = players
-	Auto.change_instanced_scene(self,tic_tac_toe_scene)
-	#Auto.change_instanced_scene(tic_tac_toe_scene)
+	Auto.reeplace_scene(self,tic_tac_toe_scene)
