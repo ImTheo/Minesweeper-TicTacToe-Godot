@@ -11,7 +11,6 @@ func _ready():
 	tic_tac_toe_scene = load("uid://cch2g4nm34cma").instantiate() as TicTaeToe
 	%Label_player.text = "Jugador 1"
 	get_tree().get_first_node_in_group(SIGN_GROUP).button_pressed = true
-
 func update_available_signs():
 	for i:TextureButton in get_tree().get_nodes_in_group(SIGN_GROUP):
 		if not i.button_pressed and not i.disabled:
@@ -31,7 +30,7 @@ func push_saved_player():
 	for i:TextureButton in get_tree().get_nodes_in_group(SIGN_GROUP):
 		if i.is_pressed():
 			player_resource_path = i.texture_normal.resource_path
-			i.queue_free()
+			i.free()
 			players.append(Player.new(player_name,player_resource_path))
 			break
 
