@@ -51,11 +51,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 100
 text = "Minesweeper"
 
-[node name="Button_Minesweeper2" type="Button" parent="ScrollContainer/VBoxContainer/VBoxContainer"]
-visible = false
+[node name="Button_Threads" type="Button" parent="ScrollContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 100
-text = "tewst"
+text = "threads"
 
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/VBoxContainer/Button_TicTacToe" to="." method="_on_button_tic_tac_toe_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/VBoxContainer/Button_Minesweeper" to="." method="_on_button_minesweeper_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/VBoxContainer/Button_Threads" to="." method="_on_button_threads_pressed"]

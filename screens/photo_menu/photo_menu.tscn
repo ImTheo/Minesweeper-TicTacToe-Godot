@@ -1,0 +1,78 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwwyg14nx07sy"]
+
+[ext_resource type="Script" path="res://screens/photo_menu/photo_menu.gd" id="1_eyblo"]
+
+[node name="PhotoMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eyblo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -329.5
+offset_top = -372.0
+offset_right = 329.5
+offset_bottom = 372.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 150
+text = "Select picture"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 50
+
+[node name="Button_Picture1" type="Button" parent="VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+disabled = true
+text = "Picture 1"
+
+[node name="Button_Picture2" type="Button" parent="VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+disabled = true
+text = "Picture 2"
+
+[node name="Button_Picture3" type="Button" parent="VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+disabled = true
+text = "Picture 3"
+
+[node name="Button_Return" type="Button" parent="."]
+layout_mode = 1
+offset_right = 256.0
+offset_bottom = 112.0
+theme_override_font_sizes/font_size = 75
+text = "Return"
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Button_Picture1" to="." method="_on_button_picture_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Button_Picture2" to="." method="_on_button_picture_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Button_Picture3" to="." method="_on_button_picture_3_pressed"]
+[connection signal="pressed" from="Button_Return" to="." method="_on_button_return_pressed"]

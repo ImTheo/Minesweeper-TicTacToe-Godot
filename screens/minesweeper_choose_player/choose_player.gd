@@ -2,7 +2,6 @@ class_name ChoosePlayer
 extends Control
 var players:Array[Player]
 const SIGN_GROUP = "sign_buttons"
-const SIGNAL_SIGN_SELECTED = "sign_selected"
 var tic_tac_toe_scene:TicTaeToe
 
 @onready var tree = get_tree()
