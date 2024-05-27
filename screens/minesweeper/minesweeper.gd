@@ -1,7 +1,7 @@
 extends Control
 
 var board_squares:Array[Square]
-const COLUMNS = 10
+const COLUMNS = 15
 const SQUARES = int(pow(COLUMNS,2))
 const MINES = COLUMNS
 const SQUARE_SCENE:Resource = preload("uid://cd4njqupgwpeb")
@@ -102,9 +102,9 @@ func game_ended(message:String):
 
 func _on_button_reiniciar_pressed():
 	var minesweeper_scene = load("uid://bh86pg0gra60k").instantiate()
-	Auto.change_instanced_scene(self,minesweeper_scene)
+	Auto.reeplace_scene(self,minesweeper_scene)
 
 
 func _on_button_menu_pressed():
 	var main_scene = load("uid://c1s431lbfbycn").instantiate()
-	Auto.change_instanced_scene(self,main_scene)
+	Auto.reeplace_scene(self,main_scene)

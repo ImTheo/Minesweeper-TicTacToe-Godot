@@ -111,11 +111,11 @@ func update_texture(cell:Cell):
 func _on_button_pressed():
 	var tic_tac_toe_scene:TicTaeToe = load("uid://cch2g4nm34cma").instantiate()
 	tic_tac_toe_scene.players = players
-	Auto.change_instanced_scene(self,tic_tac_toe_scene)
+	Auto.reeplace_scene(self,tic_tac_toe_scene)
 
 func _on_button_return_pressed():
 	var main_scene = load("uid://c1s431lbfbycn").instantiate()
-	Auto.change_instanced_scene(self,main_scene)
+	Auto.reeplace_scene(self,main_scene)
 
 func update_winning_lines(board_size: int):
 	# Rows

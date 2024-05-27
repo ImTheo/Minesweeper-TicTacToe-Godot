@@ -1,2 +1,5 @@
 # Godot 4+ specific ignores
 .godot/
+screens/photo_menu/photo_1/assets
+screens/photo_menu/photo_2/assets
+screens/photo_menu/photo_3/assets

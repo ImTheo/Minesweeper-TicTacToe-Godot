@@ -1,0 +1,103 @@
+[gd_scene load_steps=6 format=3 uid="uid://ceoy2jdbsdav6"]
+
+[ext_resource type="Texture2D" uid="uid://bfsjmguxitn62" path="res://screens/photo_menu/photo_1/assets/beaute-nature-se-reflete-dans-eaux-tranquilles-montagnes-ai-generative.jpg" id="1_2hnds"]
+[ext_resource type="Script" path="res://screens/photo_menu/photo_2/photo_2.gd" id="1_ntvjb"]
+[ext_resource type="Texture2D" uid="uid://bwxn7xy5c5fjf" path="res://screens/photo_menu/photo_1/assets/barco2.jpg" id="2_sleel"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dp3cw"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_803fy"]
+
+[node name="Photo2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ntvjb")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = 67.0
+offset_right = 28.0
+offset_bottom = 1505.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Viejo-barco-pesquero-oxidado-ladera-lo-largo-orilla-lago6" type="Sprite2D" parent="ScrollContainer/VBoxContainer"]
+position = Vector2(960, 610)
+scale = Vector2(0.344128, 0.360989)
+texture = SubResource("CompressedTexture2D_dp3cw")
+
+[node name="Viejo-barco-pesquero-oxidado-ladera-lo-largo-orilla-lago7" type="Sprite2D" parent="ScrollContainer/VBoxContainer"]
+position = Vector2(960, 610)
+scale = Vector2(0.344128, 0.360989)
+texture = ExtResource("2_sleel")
+
+[node name="Viejo-barco-pesquero-oxidado-ladera-lo-largo-orilla-lago8" type="Sprite2D" parent="ScrollContainer/VBoxContainer"]
+position = Vector2(960, 610)
+scale = Vector2(0.344128, 0.360989)
+texture = SubResource("CompressedTexture2D_803fy")
+
+[node name="Viejo-barco-pesquero-oxidado-ladera-lo-largo-orilla-lago9" type="Sprite2D" parent="ScrollContainer/VBoxContainer"]
+position = Vector2(960, 610)
+scale = Vector2(0.344128, 0.360989)
+texture = ExtResource("1_2hnds")
+
+[node name="Viejo-barco-pesquero-oxidado-ladera-lo-largo-orilla-lago10" type="Sprite2D" parent="ScrollContainer/VBoxContainer"]
+position = Vector2(960, 610)
+scale = Vector2(0.344128, 0.360989)
+texture = SubResource("CompressedTexture2D_dp3cw")
+
+[node name="Viejo-barco-pesquero-oxidado-ladera-lo-largo-orilla-lago11" type="Sprite2D" parent="ScrollContainer/VBoxContainer"]
+position = Vector2(960, 610)
+scale = Vector2(0.344128, 0.360989)
+texture = ExtResource("2_sleel")
+
+[node name="Viejo-barco-pesquero-oxidado-ladera-lo-largo-orilla-lago12" type="Sprite2D" parent="ScrollContainer/VBoxContainer"]
+position = Vector2(960, 610)
+scale = Vector2(0.344128, 0.360989)
+texture = SubResource("CompressedTexture2D_803fy")
+
+[node name="Viejo-barco-pesquero-oxidado-ladera-lo-largo-orilla-lago13" type="Sprite2D" parent="ScrollContainer/VBoxContainer"]
+position = Vector2(960, 610)
+scale = Vector2(0.344128, 0.360989)
+texture = ExtResource("1_2hnds")
+
+[node name="Viejo-barco-pesquero-oxidado-ladera-lo-largo-orilla-lago14" type="Sprite2D" parent="ScrollContainer/VBoxContainer"]
+position = Vector2(960, 610)
+scale = Vector2(0.344128, 0.360989)
+texture = SubResource("CompressedTexture2D_dp3cw")
+
+[node name="Viejo-barco-pesquero-oxidado-ladera-lo-largo-orilla-lago15" type="Sprite2D" parent="ScrollContainer/VBoxContainer"]
+position = Vector2(960, 610)
+scale = Vector2(0.344128, 0.360989)
+texture = ExtResource("2_sleel")
+
+[node name="Viejo-barco-pesquero-oxidado-ladera-lo-largo-orilla-lago16" type="Sprite2D" parent="ScrollContainer/VBoxContainer"]
+position = Vector2(960, 610)
+scale = Vector2(0.344128, 0.360989)
+texture = SubResource("CompressedTexture2D_803fy")
+
+[node name="Viejo-barco-pesquero-oxidado-ladera-lo-largo-orilla-lago17" type="Sprite2D" parent="ScrollContainer/VBoxContainer"]
+position = Vector2(960, 610)
+scale = Vector2(0.344128, 0.360989)
+texture = ExtResource("1_2hnds")
+
+[node name="Button_Return" type="Button" parent="."]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 112.0
+theme_override_font_sizes/font_size = 75
+text = "Return"
+
+[connection signal="pressed" from="Button_Return" to="." method="_on_button_return_pressed"]
