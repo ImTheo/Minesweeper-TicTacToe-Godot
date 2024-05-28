@@ -17,8 +17,6 @@ const TYPE_7 = "uid://dtmydp2w0kkhm"
 const TYPE_8 = "uid://1uxqshjmxn8y"
 #endregion
 
-@onready var square:TextureButton = self
-
 var flagged:bool = false
 var hint_score = 0
 
@@ -34,12 +32,12 @@ func is_mined():
 		return false
 
 func is_square_pressed():
-	return square.disabled
+	return self.disabled
 
 func _ready():
 	set_texture_square(CLOSED)
 
-func update_tile():
+func handle_selected_square():
 	if flagged:
 		return
 	match hint_score:
@@ -50,9 +48,9 @@ func update_tile():
 		_:
 			disable_square()
 			hint_square_pressed.emit()
-	reveal_tile()
+	reveal_texture_score()
 
-func reveal_tile():
+func reveal_texture_score():
 	disable_square()
 	match hint_score:
 		-1:
@@ -87,13 +85,13 @@ func update_flag_square():
 	flag_updated.emit(false)
 
 func set_texture_square(texture):
-	square.texture_normal = load(texture)
+	self.texture_normal = load(texture)
 	
 func _on_gui_input(event):
-	if event is InputEventMouseButton and event.is_pressed() and not square.disabled:
+	if event is InputEventMouseButton and event.is_pressed() and not self.disabled:
 		match event.button_index:
 			MOUSE_BUTTON_LEFT:
-				update_tile()
+				handle_selected_square()
 			MOUSE_BUTTON_RIGHT:
 				update_flag_square()
 			MOUSE_BUTTON_MIDDLE:
@@ -137,7 +135,7 @@ func add_hint():
 		add_to_group("hints")
 
 func disable_square():
-	square.disabled = true
+	self.disabled = true
 
 func explode_mine():
 	set_texture_square(MINE_RED)

@@ -7,5 +7,5 @@ func _on_cell_pressed():
 	(self as TextureButton).disabled = true
 	emit_signal("cell_pressed_signal",self)
 
-func update_tile(texture:String):
+func update_texture(texture:String):
 	self.texture_normal = load(texture)

@@ -2,11 +2,12 @@
 extends Control
 
 var board_squares:Array[Square]
+var board_array:Array[Array] = []
+
 const COLUMNS = 15
 const SQUARES = int(pow(COLUMNS,2))
 const MINES = COLUMNS
 
-var board_array:Array[Array] = []
 
 func _ready():
 	update_board_scene()
@@ -34,11 +35,11 @@ func empty_square_pressed(square:Square):
 func reveal_empty_squares(square:Square):
 	if square.is_square_pressed():
 		return
-	square.reveal_tile()
+	square.reveal_texture_score()
 	var adyacents:Array = square.get_adyacent_elements(square.get_index(),board_array)
 	for i in adyacents:
 		if board_squares[i].hint_score != 0:
-			board_squares[i].reveal_tile()
+			board_squares[i].reveal_texture_score()
 		if board_squares[i].hint_score == 0:
 			reveal_empty_squares(board_squares[i])
 

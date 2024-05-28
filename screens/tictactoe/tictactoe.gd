@@ -99,9 +99,9 @@ func update_game_state():
 
 func update_texture(cell:Cell):
 	if is_first_player_turn:
-		cell.update_tile(players[Board_states.PLAYER1].texture_path)
+		cell.update_texture(players[Board_states.PLAYER1].texture_path)
 	else:
-		cell.update_tile(players[Board_states.PLAYER2].texture_path)
+		cell.update_texture(players[Board_states.PLAYER2].texture_path)
 
 func _on_button_reset_pressed():
 	var tic_tac_toe_scene:TicTaeToe = load("uid://cch2g4nm34cma").instantiate()
