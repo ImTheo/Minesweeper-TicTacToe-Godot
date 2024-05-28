@@ -1,10 +1,11 @@
+@tool
 extends Control
 
 var board_squares:Array[Square]
 const COLUMNS = 15
 const SQUARES = int(pow(COLUMNS,2))
 const MINES = COLUMNS
-const SQUARE_SCENE:Resource = preload("uid://cd4njqupgwpeb")
+
 var board_array:Array[Array] = []
 
 func _ready():
@@ -53,8 +54,9 @@ func all_hints_pressed()->bool:
 
 func instantiate_squares():
 	var square:Square
+	var square_scene:Resource = load("uid://cd4njqupgwpeb")
 	for ii in range(SQUARES):
-		square = SQUARE_SCENE.instantiate()
+		square = square_scene.instantiate()
 		square.connect("game_ended", game_ended)
 		square.connect("hint_square_pressed", hint_square_pressed)
 		square.connect("empty_square_pressed", empty_square_pressed)
@@ -102,9 +104,9 @@ func game_ended(message:String):
 
 func _on_button_reiniciar_pressed():
 	var minesweeper_scene = load("uid://bh86pg0gra60k").instantiate()
-	Auto.reeplace_scene(self,minesweeper_scene)
+	SceneManager.reeplace_scene(self,minesweeper_scene)
 
 
 func _on_button_menu_pressed():
 	var main_scene = load("uid://c1s431lbfbycn").instantiate()
-	Auto.reeplace_scene(self,main_scene)
+	SceneManager.reeplace_scene(self,main_scene)

@@ -1,10 +1,10 @@
+class_name SceneManager
 extends Node
 
 #region Method 1 adding new_scene as a child of parent container
-func reeplace_scene(old_scene:Node,new_scene:Node):
+static func reeplace_scene(old_scene:Node,new_scene:Node):
 	var parent_container = old_scene.get_parent()
 	parent_container.remove_child(old_scene)
-	parent_container.get_tree().process_frame
 	parent_container.add_child(new_scene)
 	old_scene.queue_free()
 #endregion

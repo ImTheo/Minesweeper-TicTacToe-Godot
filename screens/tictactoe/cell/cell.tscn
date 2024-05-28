@@ -18,4 +18,4 @@ ignore_texture_size = true
 stretch_mode = 4
 script = ExtResource("2_ng727")
 
-[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="pressed" from="." to="." method="_on_cell_pressed"]

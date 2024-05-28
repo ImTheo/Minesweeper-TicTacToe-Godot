@@ -1,9 +1,12 @@
+@tool
 class_name TicTaeToe
 extends Control
 
-@export var players:Array = []
+@export var players:Array[Player] = []
+enum Board_states {NONE=-1,PLAYER1=0,PLAYER2=1}
+const TIC_TAC_TOE_CELLS = 9
 var is_first_player_turn := true
-enum Board_states {PLAYER1=0,PLAYER2=1,NONE=-1}
+var winning_lines:Array[Array]
 var board_map:Array[Board_states] = [
 	Board_states.NONE,
 	Board_states.NONE,
@@ -15,36 +18,31 @@ var board_map:Array[Board_states] = [
 	Board_states.NONE,
 	Board_states.NONE,
 ]
-var winning_lines:Array
-const TIC_TAC_TOE_CELLS = 9
-var CELL = load("uid://d3cwpywine331")
-
 
 func _ready():
 	update_scene_player_stats()
 	update_winning_lines(int(sqrt(board_map.size())))
-	instanciate_cells()
-
-func instanciate_cells():
-	var cell:Cell
-	for ii in range(TIC_TAC_TOE_CELLS):
-		cell = CELL.instantiate()
-		cell.connect("cell_pressed_signal",cell_pressed)
-		%GridContainer_TicTacToe.add_child(cell)
+	instantiate_cells()
 
 func update_scene_player_stats():
 	(%TextureRect_currentPlayer as TextureRect).texture = load(players[Board_states.PLAYER1].texture_path)
-	(%Label_turn as Label).text = players[Board_states.PLAYER1].name
+	(%Label_turn as Label).text = players[Board_states.PLAYER1].username
 	
-	(%Label_player_1 as Label).text = players[Board_states.PLAYER1].name
+	(%Label_player_1 as Label).text = players[Board_states.PLAYER1].username
 	(%Label_player1_streak as Label).text = str(players[Board_states.PLAYER1].wins)
-	(%Label_player_2 as Label).text = players[Board_states.PLAYER2].name
+	(%Label_player_2 as Label).text = players[Board_states.PLAYER2].username
 	(%Label_player2_streak as Label).text = str(players[Board_states.PLAYER2].wins)
 
-func update_current_turn():
-	is_first_player_turn = !is_first_player_turn
-	
+func instantiate_cells():
+	var cell_scene = load("uid://d3cwpywine331")
+	var cell_node:Cell
+	for ii in range(TIC_TAC_TOE_CELLS):
+		cell_node = cell_scene.instantiate()
+		cell_node.connect("cell_pressed_signal",cell_pressed)
+		%GridContainer_TicTacToe.add_child(cell_node)
+
 func update_current_player():
+	is_first_player_turn = !is_first_player_turn
 	if is_first_player_turn:
 		%TextureRect_currentPlayer.texture = load(players[Board_states.PLAYER1].texture_path)
 		(%Label_turn as Label).text = players[Board_states.PLAYER1].name
@@ -86,21 +84,18 @@ func end_game():
 func cell_pressed(cell:Cell):
 	update_texture(cell)
 	update_board_map(cell.get_index())
-	if not is_game_over():
-		update_current_turn()
-		update_current_player()
-	else:
-		end_game()
+	update_game_state()
 	
-func is_game_over()->bool:
+func update_game_state():
 	if is_winner():
 		%Label_turn.text += " Ganador"
 		increase_win_streak()
-		return true
-	if is_draw():
+		end_game()
+	elif is_draw():
 		%Label_turn.text = "Empate"
-		return true
-	return false
+		end_game()
+	else:
+		update_current_player()
 
 func update_texture(cell:Cell):
 	if is_first_player_turn:
@@ -108,14 +103,14 @@ func update_texture(cell:Cell):
 	else:
 		cell.update_tile(players[Board_states.PLAYER2].texture_path)
 
-func _on_button_pressed():
+func _on_button_reset_pressed():
 	var tic_tac_toe_scene:TicTaeToe = load("uid://cch2g4nm34cma").instantiate()
 	tic_tac_toe_scene.players = players
-	Auto.reeplace_scene(self,tic_tac_toe_scene)
+	SceneManager.reeplace_scene(self,tic_tac_toe_scene)
 
 func _on_button_return_pressed():
 	var main_scene = load("uid://c1s431lbfbycn").instantiate()
-	Auto.reeplace_scene(self,main_scene)
+	SceneManager.reeplace_scene(self,main_scene)
 
 func update_winning_lines(board_size: int):
 	# Rows
