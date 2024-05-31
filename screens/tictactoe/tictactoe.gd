@@ -25,13 +25,13 @@ func _ready():
 	instantiate_cells()
 
 func update_scene_player_stats():
-	(%TextureRect_currentPlayer as TextureRect).texture = load(players[Board_states.PLAYER1].texture_path)
-	(%Label_turn as Label).text = players[Board_states.PLAYER1].username
-	
-	(%Label_player_1 as Label).text = players[Board_states.PLAYER1].username
-	(%Label_player1_streak as Label).text = str(players[Board_states.PLAYER1].wins)
-	(%Label_player_2 as Label).text = players[Board_states.PLAYER2].username
-	(%Label_player2_streak as Label).text = str(players[Board_states.PLAYER2].wins)
+	if not Engine.is_editor_hint():
+		(%TextureRect_currentPlayer as TextureRect).texture = load(players[Board_states.PLAYER1].texture_path)
+		(%Label_turn as Label).text = players[Board_states.PLAYER1].username
+		(%Label_player_1 as Label).text = players[Board_states.PLAYER1].username
+		(%Label_player1_streak as Label).text = str(players[Board_states.PLAYER1].wins)
+		(%Label_player_2 as Label).text = players[Board_states.PLAYER2].username
+		(%Label_player2_streak as Label).text = str(players[Board_states.PLAYER2].wins)
 
 func instantiate_cells():
 	var cell_scene = load("uid://d3cwpywine331")
@@ -45,10 +45,10 @@ func update_current_player():
 	is_first_player_turn = !is_first_player_turn
 	if is_first_player_turn:
 		%TextureRect_currentPlayer.texture = load(players[Board_states.PLAYER1].texture_path)
-		(%Label_turn as Label).text = players[Board_states.PLAYER1].name
+		(%Label_turn as Label).text = players[Board_states.PLAYER1].username
 	else:
 		%TextureRect_currentPlayer.texture = load(players[Board_states.PLAYER2].texture_path)
-		(%Label_turn as Label).text = players[Board_states.PLAYER2].name
+		(%Label_turn as Label).text = players[Board_states.PLAYER2].username
 	
 func update_board_map(cell_index):
 	if is_first_player_turn:

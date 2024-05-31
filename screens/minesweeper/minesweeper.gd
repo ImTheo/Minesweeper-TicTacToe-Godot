@@ -8,19 +8,18 @@ const COLUMNS = 15
 const SQUARES = int(pow(COLUMNS,2))
 const MINES = COLUMNS
 
-
 func _ready():
-	update_board_scene()
-	update_board_array()
+	set_grid_columns_and_mines_label_text()
+	set_board_array()
 	instantiate_squares()
 	set_mines()
 	set_hints()
 	
-func update_board_scene():
+func set_grid_columns_and_mines_label_text():
 	(%GridContainer_Minesweeper as GridContainer).columns = COLUMNS
 	(%Label_minesLeft as Label).text = str(MINES)
 	
-func update_board_array():
+func set_board_array():
 	var row:Array[int] = []
 	var matrix_rows:int = SQUARES/%GridContainer_Minesweeper.columns
 	for i in range(matrix_rows):
@@ -36,12 +35,12 @@ func reveal_empty_squares(square:Square):
 	if square.is_square_pressed():
 		return
 	square.reveal_texture_score()
-	var adyacents:Array = square.get_adyacent_elements(square.get_index(),board_array)
+	var adyacents:Array = square.get_adjacent_elements(square.get_index(),board_array)
 	for i in adyacents:
-		if board_squares[i].hint_score != 0:
-			board_squares[i].reveal_texture_score()
 		if board_squares[i].hint_score == 0:
 			reveal_empty_squares(board_squares[i])
+		else:
+			board_squares[i].reveal_texture_score()
 
 func hint_square_pressed():
 	if all_hints_pressed():
@@ -76,7 +75,7 @@ func flag_updated(is_added):
 func set_hints():
 	var adyacents:Array
 	for ii:Square in get_tree().get_nodes_in_group("mines"):
-		adyacents = ii.get_adyacent_elements(ii.get_index(),board_array)
+		adyacents = ii.get_adjacent_elements(ii.get_index(),board_array)
 		for adyacent_index in adyacents:
 			board_squares[adyacent_index].add_hint()
 
@@ -106,7 +105,6 @@ func game_ended(message:String):
 func _on_button_reiniciar_pressed():
 	var minesweeper_scene = load("uid://bh86pg0gra60k").instantiate()
 	SceneManager.reeplace_scene(self,minesweeper_scene)
-
 
 func _on_button_menu_pressed():
 	var main_scene = load("uid://c1s431lbfbycn").instantiate()

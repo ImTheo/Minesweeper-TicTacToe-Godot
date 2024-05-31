@@ -117,14 +117,14 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 40
 text = "0"
 
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/cell" to="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/cell" method="_on_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@62199" to="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@62199" method="_on_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@62200" to="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@62200" method="_on_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@62201" to="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@62201" method="_on_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@62202" to="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@62202" method="_on_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@62203" to="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@62203" method="_on_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@62204" to="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@62204" method="_on_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@62205" to="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@62205" method="_on_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@62206" to="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@62206" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/cell" to="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/cell" method="_on_cell_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17481" to="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17481" method="_on_cell_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17482" to="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17482" method="_on_cell_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17483" to="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17483" method="_on_cell_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17484" to="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17484" method="_on_cell_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17485" to="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17485" method="_on_cell_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17486" to="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17486" method="_on_cell_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17487" to="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17487" method="_on_cell_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17488" to="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17488" method="_on_cell_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer_infoBox/Button_reset" to="." method="_on_button_reset_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer_infoBox/Button_return" to="." method="_on_button_return_pressed"]
