@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://c28c7bd7wcffh"]
 
-[ext_resource type="Script" path="res://screens/minesweeper_choose_player/choose_player.gd" id="1_5u73b"]
+[ext_resource type="Script" path="res://screens/tictactoe_choose_player/choose_player.gd" id="1_5u73b"]
 [ext_resource type="Texture2D" uid="uid://bajru73r8qdlo" path="res://screens/minesweeper/assets/type1.svg" id="2_th30l"]
 [ext_resource type="Texture2D" uid="uid://b5la0vud1kaj1" path="res://screens/minesweeper/assets/mine_red.svg" id="3_0amck"]
 [ext_resource type="Texture2D" uid="uid://dim8edvf800b1" path="res://screens/minesweeper/assets/type2.svg" id="4_krhni"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cch2g4nm34cma"]
+[gd_scene load_steps=3 format=3 uid="uid://cch2g4nm34cma"]
 
 [ext_resource type="Script" path="res://screens/tictactoe/tictactoe.gd" id="1_144f3"]
+[ext_resource type="Texture2D" uid="uid://bajru73r8qdlo" path="res://screens/minesweeper/assets/type1.svg" id="2_khbk1"]
 
 [node name="TicTacToe" type="Control"]
 layout_mode = 3
@@ -54,13 +55,14 @@ size_flags_horizontal = 4
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "player"
+text = "player1"
 
 [node name="TextureRect_currentPlayer" type="TextureRect" parent="HBoxContainer/VBoxContainer/VBoxContainer_infoBox"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 4
+texture = ExtResource("2_khbk1")
 expand_mode = 2
 stretch_mode = 4
 
@@ -89,7 +91,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 40
-text = "player"
+text = "player1"
 
 [node name="Label_player1_streak" type="Label" parent="HBoxContainer/VBoxContainer2/VBoxContainer"]
 unique_name_in_owner = true
@@ -106,7 +108,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 40
-text = "player"
+text = "player2"
 
 [node name="Label_player2_streak" type="Label" parent="HBoxContainer/VBoxContainer2/VBoxContainer2"]
 unique_name_in_owner = true
@@ -115,5 +117,14 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 40
 text = "0"
 
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer_infoBox/Button_reset" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/cell" to="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/cell" method="_on_cell_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17481" to="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17481" method="_on_cell_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17482" to="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17482" method="_on_cell_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17483" to="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17483" method="_on_cell_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17484" to="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17484" method="_on_cell_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17485" to="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17485" method="_on_cell_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17486" to="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17486" method="_on_cell_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17487" to="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17487" method="_on_cell_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17488" to="HBoxContainer/VBoxContainer/GridContainer_TicTacToe/@TextureButton@17488" method="_on_cell_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer_infoBox/Button_reset" to="." method="_on_button_reset_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer_infoBox/Button_return" to="." method="_on_button_return_pressed"]
