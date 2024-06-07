@@ -1,23 +1,21 @@
 [gd_scene load_steps=6 format=3 uid="uid://ceoy2jdbsdav6"]
 
 [ext_resource type="Texture2D" uid="uid://bfsjmguxitn62" path="res://screens/photo_menu/photo_1/assets/beaute-nature-se-reflete-dans-eaux-tranquilles-montagnes-ai-generative.jpg" id="1_2hnds"]
-[ext_resource type="Script" path="res://screens/photo_menu/photo_1/photo_1.gd" id="1_by8vu"]
+[ext_resource type="Script" path="res://screens/photo_menu/photo_2/photo_2.gd" id="1_ntvjb"]
 [ext_resource type="Texture2D" uid="uid://bwxn7xy5c5fjf" path="res://screens/photo_menu/photo_1/assets/barco2.jpg" id="2_sleel"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dp3cw"]
-load_path = "res://.godot/imported/viejo-barco-pesquero-oxidado-ladera-lo-largo-orilla-lago.jpg-80f81fc7de1164d12e00de242853a336.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_803fy"]
-load_path = "res://.godot/imported/barco3.jpg-4561066344ab2ea7c3cf6c06fc00b675.ctex"
 
-[node name="Photo1" type="Control"]
+[node name="Photo2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_by8vu")
+script = ExtResource("1_ntvjb")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1
@@ -96,6 +94,7 @@ scale = Vector2(0.344128, 0.360989)
 texture = ExtResource("1_2hnds")
 
 [node name="Button_Return" type="Button" parent="."]
+layout_mode = 0
 offset_right = 256.0
 offset_bottom = 112.0
 theme_override_font_sizes/font_size = 75

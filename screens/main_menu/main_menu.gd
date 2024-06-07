@@ -16,3 +16,8 @@ func _on_button_minesweeper_pressed():
 func _on_button_threads_pressed():
 	var photo_menu_scene = load("uid://dwwyg14nx07sy").instantiate()
 	Auto.reeplace_scene(self,photo_menu_scene)
+
+
+func _on_button_inputs_pressed():
+	var inputs_scene = load("uid://c1bmoec45j2pk").instantiate()
+	Auto.reeplace_scene(self,inputs_scene)

@@ -7,7 +7,6 @@ func _ready():
 	ResourceLoader.load_threaded_request("uid://ceoy2jdbsdav6")
 	ResourceLoader.load_threaded_request("uid://c67qwjkjusrj4")
 	ResourceLoader.load_threaded_request("uid://cce4tm8wxefbl")
-	validate_buttons_load_scenes()
 
 func _process(delta):
 	validate_buttons_load_scenes()

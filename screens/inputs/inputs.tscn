@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1bmoec45j2pk"]
+
+[ext_resource type="Script" path="res://screens/inputs/InputsControl.gd" id="1_etdmo"]
+[ext_resource type="Script" path="res://screens/inputs/inputsNode.gd" id="2_48jr2"]
+
+[node name="Inputs" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 915.0
+offset_bottom = 1079.0
+script = ExtResource("1_etdmo")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(482, 88)
+scale = Vector2(3.00585, 1)
+polygon = PackedVector2Array(450, 841, 443, 208, 360.298, 75, 279, 275, 283.447, 891)
+script = ExtResource("2_48jr2")
+
+[connection signal="gui_input" from="Control" to="Control" method="_on_gui_input"]

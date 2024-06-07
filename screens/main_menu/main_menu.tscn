@@ -56,6 +56,13 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 100
 text = "threads"
 
+[node name="Button_Inputs" type="Button" parent="ScrollContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "inputs
+"
+
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/VBoxContainer/Button_TicTacToe" to="." method="_on_button_tic_tac_toe_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/VBoxContainer/Button_Minesweeper" to="." method="_on_button_minesweeper_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/VBoxContainer/Button_Threads" to="." method="_on_button_threads_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/VBoxContainer/Button_Inputs" to="." method="_on_button_inputs_pressed"]
